@@ -1,0 +1,17 @@
+
+.Header{
+
+    justify-content: space-between;
+    img{
+    border-radius: 50%;
+    }
+    button{
+       
+        &.btn-gray{
+            background-color: gray;
+            color: black;
+        }
+        background-color: red;
+        color: white;
+    }
+}

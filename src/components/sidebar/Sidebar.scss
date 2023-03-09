@@ -1,0 +1,65 @@
+@import '../../base.scss';
+
+.Sidebar{
+    display: flex;
+    flex-direction: column;
+
+    width: 20vw;
+    height: 90vh;
+    padding-top: 2rem;
+    background-color: $black-secondary;
+    border-right:1px solid white ;
+    transition: 0.3s ease-in;
+
+    position: sticky;
+    left: 0;
+    top: 10vh;
+    li{
+        display: flex;
+        align-items: center;
+
+        list-style: none;
+        padding: 0.8rem 1.25rem;
+        margin: 0.2rem;
+        cursor: pointer;
+        Span{
+        
+            margin-left:1rem;
+            letter-spacing: 0.2px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        &:hover{
+            background-color:rgb(118, 115, 115);
+            color: black;
+        } 
+    }
+   hr{
+    background-color: $border-color;
+   }
+   &.open{
+    transform: translateX(0%);
+   }   
+}
+
+@media (max-width:$breakpoint-medium) {
+    .Sidebar{
+        width:10vh;
+        li{
+            justify-content: center;
+            span{
+                display: none
+            }
+        };
+    }
+}
+
+@media (max-width:$breakpoint-small) {
+    .Sidebar{
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 999;
+
+    }
+    
+}
