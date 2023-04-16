@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import'./header.scss';
 
-import { FaBars} from 'react-icons/fa';
+// import { FaBars} from 'react-icons/fa';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {MdNotifications,MdApps} from 'react-icons/md'
 import { useNavigate } from 'react-router-dom';
@@ -20,9 +20,9 @@ function Header({handleToggleSidebar}) {
    
   <div className='header'>
       <div className='header_left'>
-        <FaBars className='header_menu' size={22}
+        {/* <FaBars className='header_menu' size={22}
         onClick={()=>handleToggleSidebar()}
-        />
+        /> */}
         <img className="header_logo" 
         src='https://png.pngtree.com/element_our/sm/20180506/sm_5aeee59357bbb.png' alt='' />
       </div>
