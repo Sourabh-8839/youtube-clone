@@ -9,6 +9,9 @@ import { useDispatch, useSelector } from 'react-redux'
 function Comments({videoId,totalComments}) {
 
   
+  const photoURL = useSelector(state=>state.auth.user?.photoURL);
+
+  console.log(photoURL);
 
   const comments =useSelector(state=>state.commentList.comments);
 
@@ -46,7 +49,7 @@ const [text,setText]  =useState('');
       <p>{totalComments} Comments</p>
 
       <div className='comment_form d-flex '>
-        <img src="https://png.pngtree.com/element_our/sm/20180506/sm_5aeee59357bbb.png" alt="" 
+        <img src={photoURL} alt="" 
         
         className='rounded-circle m-3'
         />

@@ -115,7 +115,7 @@ const [channelIcon,setchannelIcon]=useState(null);
 
              <p>{
                 video?.contentDetails?.totalItemCount
-             } Videos
+             }
              </p>
              
       </Col> 

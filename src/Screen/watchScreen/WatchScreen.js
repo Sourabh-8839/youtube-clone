@@ -10,6 +10,8 @@ import VideoMetaData from '../../components/videoMetaData/VideoMetaData'
 
 import { getRelatedVideos, getVideoById} from '../../redux/action/videos.action';
 import './watchScreen.scss'
+
+import { Helmet } from 'react-helmet'
 const WatchScreen = () => {
 
    const {id}=useParams();
@@ -34,6 +36,9 @@ const WatchScreen = () => {
   
   return (
     <Row>
+      <Helmet>
+        <title>{video?.snippet?.title}</title>
+      </Helmet>
       <Col lg={8}>
             <div className='watchscreen_player'>
 

@@ -9,7 +9,7 @@ import
   MdHistory,
   MdLibraryBooks,
   MdHome,
-  MdSentimentDissatisfied
+  // MdSentimentDissatisfied
 }from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { log_out } from '../../redux/action/auth.action'
@@ -26,10 +26,12 @@ const SideBar = ({sidebar,handleToggleSidebar}) => {
      className= {sidebar?"Sidebar open":"Sidebar"}
     onClick={()=>handleToggleSidebar(false)}
     >
+    <Link to='/'>
      <li>
       <MdHome size={22}/>
       <span>Home</span>
       </li>
+      </Link>
     <Link to='/feed/subscriptions'>
       <li>
       <MdSubscriptions size={22}/>
@@ -50,12 +52,13 @@ const SideBar = ({sidebar,handleToggleSidebar}) => {
       <MdLibraryBooks size={22}/>
       <span>Library</span>
       </li>
-      <li>
+      {/* <li>
       <MdSentimentDissatisfied size={22}/>
-      <span>I don't Know</span>
-      </li>
+      <span></span>
+      </li> */}
 
       <hr/>
+
       <li onClick={handlelogOut}>
       <MdExitToApp size={22}/>
       <span>Log Out</span>

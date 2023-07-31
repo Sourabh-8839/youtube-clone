@@ -5,6 +5,8 @@ import { FaBars} from 'react-icons/fa';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {MdNotifications,MdApps} from 'react-icons/md'
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 function Header({handleToggleSidebar}) {
 
   const [input,setInput]=useState('');
@@ -14,7 +16,14 @@ function Header({handleToggleSidebar}) {
     e.preventDefault();
 
     navigate(`/search/${input}`);
+    
   }
+
+  const photoURL = useSelector(state=>state.auth.user?.photoURL)
+
+  console.log(photoURL);
+
+ 
 
   return (
    
@@ -39,7 +48,7 @@ function Header({handleToggleSidebar}) {
         <i class="fa-solid fa-user"></i> */}
         <MdNotifications size={24}/>
         <MdApps size={24}/>
-        <img id="user_id"src='https://png.pngtree.com/png-vector/20190321/ourmid/pngtree-vector-users-icon-png-image_856952.jpg' alt='avtar' />
+        <img id="user_id"src={photoURL} alt='avtar' />
       </div>
   </div>
    

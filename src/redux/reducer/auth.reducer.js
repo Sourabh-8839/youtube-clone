@@ -3,11 +3,12 @@ import { LOAD_PROFILE, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS, LOG_OUT } from 
 
 const intialState={
     accessToken:sessionStorage.getItem("ytc-access-token")? sessionStorage.getItem("ytc-access-token"):null,
-    user:sessionStorage.getItem("ytc-user")?JSON.parse(sessionStorage.getItem("ytc-user")):null,
+    user: sessionStorage.getItem("ytc-user")?JSON.parse(sessionStorage.getItem("ytc-user")):null,
     loading:false
 }
 
-export const authReducer=(prevState = intialState ,  action)=>{
+
+export const authReducer=(prevState=intialState, action)=>{
 
     const {type,payload}=action
 
@@ -23,6 +24,12 @@ export const authReducer=(prevState = intialState ,  action)=>{
                 accessToken:payload,
                 loading:false
             }
+        case LOAD_PROFILE:
+            return{
+                ...prevState,
+                user:payload,
+                loading:true
+                }
            
         case LOGIN_FAIL:
             return{
@@ -31,14 +38,10 @@ export const authReducer=(prevState = intialState ,  action)=>{
                 loading:false,
                 error:payload
             }
-            case LOAD_PROFILE:
-                return{
-                    ...prevState,
-                    user:payload
-                }
         
-            case LOG_OUT:
-                return{
+        
+        case LOG_OUT:
+            return{
                     ...prevState,
                     accessToken:null,
                     user:null,

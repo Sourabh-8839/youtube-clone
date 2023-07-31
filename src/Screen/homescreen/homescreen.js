@@ -6,8 +6,6 @@ import { useDispatch, useSelector,  } from 'react-redux';
 import { getPopularVideos, getVideoByCategoriesBar,} from '../../redux/action/videos.action';
 
 
-
-
 import InfiniteScroll from 'react-infinite-scroll-component';
 import SkeltonVideo from '../../components/skelton/SkeltonVideo';
 
@@ -48,7 +46,7 @@ const Homescreen = () => {
             
             {
                !loading?videos.map((video)=>(
-                    <Col lg={3} md={4} key={video.id} >
+                    <Col lg={4} md={4} key={video.id} >
                     <Videoarea video={video} />
                     </Col>
                 ) )

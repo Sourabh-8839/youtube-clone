@@ -11,6 +11,7 @@ import { checkSubscriptionStatus, getChannelDetails } from '../../redux/action/c
 import { useNavigate } from 'react-router-dom';
 
 
+
 const VideoMetaData = ({video:{snippet,statistics},videoId}) => {
 
 const {title,channelId,publishedAt,description,channelTitle}=snippet;
@@ -39,6 +40,8 @@ const {snippet:channelSnippet ,statistics:channelStatistics} =useSelector(state=
 
   return (
    <div className="VideoMetaData py-2">
+
+   
     <div className="VideoMetaData_top">
         <h5>{title}</h5>
         <div className='d-flex justify-content-between align-items-center py-1'>

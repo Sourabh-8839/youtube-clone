@@ -1,9 +1,19 @@
 
+@import'../../base.scss';
+
 .watchscreen_player{
 
     height: 60vh;
     width: 100%;
+
     
     margin-bottom: 2rem;
+    
+}
+
+@media (max-width:$breakpoint-small) {
+    .watchscreen_player{
+        height: 35vh;
+    }
     
 }
